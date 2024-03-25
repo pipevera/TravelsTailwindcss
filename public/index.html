@@ -9,24 +9,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
-<body class="font-Poppins">
-    <nav></nav>
+<body class="font-Poppins dark:bg-gray-900">
+    <nav class="w-full h-18 hidden bg-white lg:flex p-6 justify-between items-center">
+        <div class="h-auto w-auto">
+            <p class="text-2xl font-semibold">Travels</p>
+        </div>
+        <div class="space-x-8">
+            <a class="font-semibold text-lg text-principal" href="#home">Inicio</a>
+            <a class="font-semibold text-lg text-principal" href="#recommendations">Recomendados</a>
+            <a class="font-semibold text-lg text-principal" href="#featured_rentals">Rentas</a>
+            <a class="font-semibold text-lg text-principal" href="#faqs">FAQS</a>
+            <a class="font-semibold text-lg text-principal" href="#footer">Sobre nosotros</a>
+        </div>
+        <div class="flex space-x-4">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-principal">
+                <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+            </svg>
+            <button id="buttonDarkMode" onclick="toggleDarkMode()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-principal">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+            </button>
+            
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-principal">
+                <path d="M14.8284 9.82843C15.5786 9.07828 16 8.06087 16 7C16 5.93913 15.5786 4.92172 14.8284 4.17157C14.0783 3.42143 13.0609 3 12 3C10.9391 3 9.92172 3.42143 9.17157 4.17157C8.42143 4.92172 8 5.93913 8 7C8 8.06087 8.42143 9.07828 9.17157 9.82843C9.92172 10.5786 10.9391 11 12 11C13.0609 11 14.0783 10.5786 14.8284 9.82843Z" stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.05025 16.0503C8.36301 14.7375 10.1435 14 12 14C13.8565 14 15.637 14.7375 16.9497 16.0503C18.2625 17.363 19 19.1435 19 21H5C5 19.1435 5.7375 17.363 7.05025 16.0503Z" stroke="#3F3F46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+        </div>
+    </nav>
     <section class="w-full h-screen">
-        <div id="home">
-            <div class="w-full h-3/4">
-                <div class="w-full h-full flex flex-col absolute space-y-96 items-center py-4">
-                    <input class="w-60 rounded-full outline-none p-3 shadow-md transition-all duration-300 focus-within:shadow-md focus:ring-2 focus:w-11/12" type="search" name="" id="" placeholder="San Francisco">
-                    <button class="bg-white rounded-full text-xl font-semibold text-principal p-4 w-36 shadow-md transition-all duration-500 ease-in-out hover:bg-principal hover:text-white transform hover:-translate-y-1 hover:scale-110">
+        <div class="w-full h-3/4" id="home">
+            <div class="w-full h-full">
+                <div class="w-full h-full flex flex-col absolute space-y-96 items-center py-4 lg:space-y-0 lg:items-start lg:justify-start lg:z-20 lg:ps-10 lg:pt-48">
+                    <input class="w-60 rounded-full outline-none p-3 shadow-md transition-all duration-300 focus-within:shadow-md focus:ring-2 focus:w-11/12 lg:hidden" type="search" name="" id="" placeholder="San Francisco">
+                    <div class="hidden h-auto lg:w-2/5 lg:flex pb-6 text-balance">
+                        <p class="text-4xl font-semibold text-black">¡Encuentra más ubicaciones como esta!</p>
+                    </div>
+                    <button class="bg-white rounded-full text-xl font-semibold text-principal p-4 w-36 shadow-md transition-all duration-500 ease-in-out hover:bg-principal hover:text-white transform hover:-translate-y-1 hover:scale-110 lg:">
                         Explorar
                     </button>
                 </div>
-                <div class="w-full h-full">
-                    <img src="./img/sanFrancisco.jpg" alt="">
+                <div class="w-full h-full lg:h-full lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center">
+                    <img class="lg:hidden" src="./img/sanFrancisco.jpg" alt="">
                 </div>
                 
             </div>
         </div>
-        <div class="p-6" id="recommendations">
+        <div class="p-6 " id="recommendations">
             <p class="text-3xl font-semibold text-principal">Recomendados</p>
             <div class="w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex gap-6 overflow-y-hidden">
                 <div class="Card">
@@ -91,22 +121,27 @@
         <div class="p-6 h-auto w-full" id="featured_rentals">
             <p class="text-3xl text-principal font-semibold pb-6">Rentas destacadas</p>
             <div class="w-full h-full flex flex-col gap-6 items-center justify-center">
-                <div class="w-full h-96 bg-cover bg-chicago bg-center rounded-xl">
-                    <p class="cardTitle">Chicago</p>
-                    <p class="text-white pl-8 mr-24">2 habitaciones, baño y cocina</p>
+                <div class="w-full h-96 bg-cover bg-chicago bg-center rounded-xl ">
+                    <p class="cardTitle lg:text-black">Chicago</p>
+                    <p class="text-white pl-8 mr-24 lg:text-lg lg:text-black">2 habitaciones, baño y cocina</p>
                 </div>
-                <div class="w-full h-96 bg-LA bg-cover bg-center rounded-xl">
-                    <p class="cardTitle">Los Angeles</p>
-                    <p class="text-white pl-8 mr-24">4 habitaciones, 3 baños, cocina y piscina privada</p>
+                <div class="lg:flex lg:h-full gap-4 lg:w-full">
+                    <div class="w-full h-96 bg-LA bg-cover bg-center rounded-xl mb-6 lg:h-auto">
+                        <p class="cardTitle">Los Angeles</p>
+                        <p class="text-white pl-8 mr-24 lg:text-lg">4 habitaciones, 3 baños, cocina y piscina privada</p>
+                    </div>
+                    <div class="lg:h-full lg:w-full">
+                        <div class="w-full h-96 bg-miami bg-cover rounded-xl mb-6">
+                            <p class="cardTitle">Miami</p>
+                            <p class="text-white pl-8 mr-24 lg:text-lg">3 habitaciones, 2 baños, cocina y una viste increible al mar</p>
+                        </div>
+                        <div class="w-full h-96 bg-bali bg-cover rounded-xl mb-6">
+                            <p class="cardTitle">Bali</p>
+                            <p class="text-white pl-8 mr-24 lg:text-lg">2 habitaciones, 2 baños, cocina y una piscina privada</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-full h-96 bg-miami bg-cover rounded-xl">
-                    <p class="cardTitle">Miami</p>
-                    <p class="text-white pl-8 mr-24">3 habitaciones, 2 baños, cocina y una viste increible al mar</p>
-                </div>
-                <div class="w-full h-96 bg-bali bg-cover rounded-xl">
-                    <p class="cardTitle">Bali</p>
-                    <p class="text-white pl-8 mr-24">2 habitaciones, 2 baños, cocina y una piscina privada</p>
-                </div>
+                
             </div>
         </div>
 
@@ -131,16 +166,16 @@
                 </div>
             </div>
         </div>
-        <footer class="p-6 w-full pb-20 h-auto bg-gray-100 space-y-2">
+        <footer id="footer" class="p-6 w-full pb-20 h-auto bg-gray-100 space-y-2">
             <p class="text-lg">Acerca de</p>
             <p class="text-sm text-gray-400">Acerca de</p>
-            <p class="text-sm text-gray-400">Inversionistas</p>
+            <p class="text-sm text-gray-400">Inversionistas</pZ>
             <p class="text-sm text-gray-400">Empleos</p>
             <p class="text-sm text-gray-400">Términos y Condiciones</p>
             <p class="text-sm text-gray-400">Travels, Inc.</p>
         </footer>
     </section>
-    <div class="w-full h-14 bg-white fixed left-0 bottom-0 shadow-md flex gap-4 items-center justify-center" id="tabBar">
+    <div class="w-full h-14 bg-white fixed left-0 bottom-0 shadow-md flex gap-4 items-center justify-center lg:hidden" id="tabBar">
         <a href="#home">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
             <path class="text-gray-00" stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -165,4 +200,5 @@
         </button>
     </div>
 </body>
+<script src="./js/script.js"></script>
 </html>
